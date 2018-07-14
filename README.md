@@ -1,0 +1,1 @@
+# spark-streaming-ignite-example
