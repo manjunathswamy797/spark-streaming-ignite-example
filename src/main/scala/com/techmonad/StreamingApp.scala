@@ -7,6 +7,7 @@ import org.apache.spark.sql.{Dataset, SaveMode, SparkSession}
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
+import scala.util.control.NonFatal
 
 //TODO: Structured Streaming does not have support for ignite db
 object StreamingApp /*extends App*/ {
@@ -65,7 +66,7 @@ object StreamingApp /*extends App*/ {
         println("Result " + result)
         println("total result = " + result.length)
       } catch {
-        case e =>
+        case NonFatal(_) =>
           println("hug.......")
       }
     }
